@@ -1,8 +1,10 @@
+using CustomerInquiry.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -27,6 +29,10 @@ namespace ChangePassword
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            var connection = @"Server=(localdb)\mssqllocaldb;Database=CustomerInquiry;Trusted_Connection=True;ConnectRetryCount=0";
+            services.AddDbContext<CustomerContext>
+                (options => options.UseSqlServer(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ChangePassword.Services;
+using CustomerInquiry.Repository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ChangePassword.Controllers
@@ -13,9 +14,9 @@ namespace ChangePassword.Controllers
     {
         private TransactionServices _transactionServices;
 
-        public CustomerController()
+        public CustomerController(CustomerContext customerContext)
         {
-            _transactionServices = new TransactionServices();
+            _transactionServices = new TransactionServices(customerContext);
         }
 
         [HttpPost("GetCustomer")]
