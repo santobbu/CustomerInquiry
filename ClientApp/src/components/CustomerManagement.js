@@ -16,7 +16,10 @@ export class CustomerManagement extends Component {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
             },
-            body: null,
+            body: {
+                customerId: this.props.customerId,
+                email: this.props.email,
+            },
         })
         .then(response => response.json())
         .then(data => {
@@ -68,7 +71,7 @@ export class CustomerManagement extends Component {
 
         return (
             <div>
-                <h1>Customer Management</h1>
+                <h1>{this.props.title}</h1>
                 <p>See all customers available on database.</p>
                 {contents}
             </div>

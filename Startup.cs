@@ -30,7 +30,7 @@ namespace ChangePassword
                 configuration.RootPath = "ClientApp/build";
             });
 
-            var connection = @"Server=(localdb)\mssqllocaldb;Database=CustomerInquiry;Trusted_Connection=True;ConnectRetryCount=0";
+            var connection = @"Server=5WTJPF2\SQLEXPRESS;Database=CustomerInquiry;Trusted_Connection=True;MultipleActiveResultSets=true";
             services.AddDbContext<CustomerContext>
                 (options => options.UseSqlServer(connection));
         }
