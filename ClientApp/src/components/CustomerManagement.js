@@ -16,10 +16,10 @@ export class CustomerManagement extends Component {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
             },
-            body: {
+            body: JSON.stringify({
                 customerId: this.props.customerId,
                 email: this.props.email,
-            },
+            }),
         })
         .then(response => response.json())
         .then(data => {

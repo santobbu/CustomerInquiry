@@ -20,10 +20,17 @@ namespace ChangePassword.Controllers
         }
 
         [HttpPost("GetCustomer")]
-        public JsonResult GetCustomer(int customerId, string email)
+        public JsonResult GetCustomer(CustomerParams customerParams)
         {
-            var customers = _transactionServices.GetCustomers(customerId, email);
+            var customers = _transactionServices.GetCustomers(customerParams.CustomerId, customerParams.Email);
             return Json(customers);
         }
+    }
+
+    public class CustomerParams
+    {
+        public int CustomerId { get; set; }
+
+        public string Email { get; set; }
     }
 }

@@ -18,7 +18,7 @@ namespace ChangePassword.Services
         }
         public List<Customer> GetCustomers(int customerId, string email)
         {
-            return null;
+            return _customerContext.GetCustomers(customerId, email);
         }
 
         public void InsertDefaultValue()
@@ -30,7 +30,13 @@ namespace ChangePassword.Services
                 new Customer { CustomerId = 3, CustomerName = "User 03", Email= "user03@mail.com",  MobileNo = "01234567" },
             };
 
-            _customerContext.AddRange(customers);
+            // _customerContext.AddRange(customers);
+            customers.ForEach(item => {
+                if (!_customerContext.GetCustomers(item.CustomerId, item.Email).Any())
+                {
+                    _customerContext.Add(item);
+                }
+            });
             _customerContext.SaveChanges();
         }
     }

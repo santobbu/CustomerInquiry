@@ -13,7 +13,7 @@ export class RequestScenario extends Component {
             <div>
                 <CustomerManagement
                     title="Request Scenario #1"
-                    customerId={123456}
+                    customerId={1}
                 />
 
                 <hr />
@@ -27,7 +27,7 @@ export class RequestScenario extends Component {
 
                 <CustomerManagement
                     title="Request Scenario #3"
-                    customerId={123456}
+                    customerId={1}
                     email="user01@mail.com" 
                 />
 
