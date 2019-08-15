@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ChangePassword.Services;
+using CustomerInquiry.Services;
 using CustomerInquiry.Repository;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ChangePassword.Controllers
+namespace CustomerInquiry.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

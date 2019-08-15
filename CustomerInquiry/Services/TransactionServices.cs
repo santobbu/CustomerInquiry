@@ -5,9 +5,9 @@ using CustomerInquiry.DataModel;
 using CustomerInquiry.Repository;
 using LiteDB;
 
-namespace ChangePassword.Services
+namespace CustomerInquiry.Services
 {
-    public class TransactionServices
+    public class TransactionServices : ITransactionServices
     {
         private CustomerContext _customerContext;
 
